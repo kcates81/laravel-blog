@@ -42,7 +42,7 @@ class HomeController extends BaseController {
 	    return View::make('portfolio')->with($data);
 	}
 
-	public function rollDice($guess)
+	public function rollDice($guess = 1)
 	{
 		$min = 1;
 	    $max = 6;
