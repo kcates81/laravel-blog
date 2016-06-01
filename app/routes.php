@@ -11,47 +11,10 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@showWelcome');
 
-Route::get('/resume', function()
-{
-    $name = 'something';
+Route::get('/resume', 'HomeController@showResume');
 
-    $data = array(
-        'name' => $name
-    );
+Route::get('/portfolio', 'HomeController@showPortfolio');
 
-    return View::make('resume')->with($data);
-});
-
-Route::get('/portfolio', function()
-{
-    $name = 'something else';
-
-    $data = array(
-        'name' => $name
-    );
-
-    return View::make('portfolio')->with($data);
-});
-
-Route::get('/rolldice/{guess}', function($guess) 
-{
-    $min = 1;
-    $max = 6;
-    $message = '';
-    $randomNum = mt_rand((int)$min, (int)$max);
-
-    $message = ($guess == $randomNum) ? 'You guessed it!' : 'Nope!';
-    
-    $data = array(
-        'randomNum' => $randomNum,
-        'guess' => $guess,
-        'message' => $message
-    );
-
-    return View::make('roll-dice')->with($data);
-});
+Route::get('/rolldice/{guess}', 'HomeController@rollDice');
