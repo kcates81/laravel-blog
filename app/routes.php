@@ -33,11 +33,7 @@ Route::get('/rolldice/{guess}', function($guess)
     $message = '';
     $randomNum = mt_rand((int)$min, (int)$max);
 
-    if ($guess == $randomNum) {
-        $message = 'You guessed it!';
-    }else{
-        $message = 'Nope!';
-    }
+    $message = ($guess == $randomNum) ? 'You guessed it!' : 'Nope!';
     
     $data = array(
         'randomNum' => $randomNum,
