@@ -43,7 +43,7 @@ Route::get('/rolldice/{guess}', function($guess)
         'randomNum' => $randomNum,
         'guess' => $guess,
         'message' => $message
-        );
+    );
 
     return View::make('roll-dice')->with($data);
 });
