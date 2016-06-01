@@ -18,12 +18,24 @@ Route::get('/', function()
 
 Route::get('/resume', function()
 {
-    return "This is my resume";
+    $name = 'something';
+
+    $data = array(
+        'name' => $name
+    );
+
+    return View::make('resume')->with($data);
 });
 
 Route::get('/portfolio', function()
 {
-    return "This is my portfolio";
+    $name = 'something else';
+
+    $data = array(
+        'name' => $name
+    );
+
+    return View::make('portfolio')->with($data);
 });
 
 Route::get('/rolldice/{guess}', function($guess) 
