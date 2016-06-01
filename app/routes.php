@@ -26,13 +26,24 @@ Route::get('/portfolio', function()
     return "This is my portfolio";
 });
 
-Route::get('/rolldice', function() 
+Route::get('/rolldice/{guess}', function($guess) 
 {
     $min = 1;
     $max = 6;
+    $message = '';
     $randomNum = mt_rand((int)$min, (int)$max);
 
-    $data = array('randomNum' => $randomNum);
+    if ($guess == $randomNum) {
+        $message = 'You guessed it!';
+    }else{
+        $message = 'Nope!';
+    }
+    
+    $data = array(
+        'randomNum' => $randomNum,
+        'guess' => $guess,
+        'message' => $message
+        );
 
     return View::make('roll-dice')->with($data);
 });
