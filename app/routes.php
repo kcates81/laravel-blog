@@ -25,3 +25,14 @@ Route::get('/portfolio', function()
 {
     return "This is my portfolio";
 });
+
+Route::get('/rolldice', function() 
+{
+    $min = 1;
+    $max = 6;
+    $randomNum = mt_rand((int)$min, (int)$max);
+
+    $data = array('randomNum' => $randomNum);
+
+    return View::make('roll-dice')->with($data);
+});
