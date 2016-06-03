@@ -12,7 +12,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#!" class="brand-logo"><img src="/img/mylogo_white.png"></a>
+            <a href="{{action('PostsController@index')}}" class="brand-logo"><img src="/img/mylogo_white.png"></a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li class="active"><a href="{{action('PostsController@index')}}">Posts</a></li>
@@ -36,5 +36,6 @@
             $(".button-collapse").sideNav();
         })
     </script>
+    @yield('bottom-script')
 </body>
 </html>
