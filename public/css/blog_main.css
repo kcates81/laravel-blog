@@ -1,0 +1,32 @@
+
+.btn {
+   background-color: #FF8A00 !important; 
+}
+
+h1 {
+    font-weight: 200px;
+}
+h3 {
+    color: #FF8A00;
+}
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #03a9f4 !important;
+    box-shadow: 0 1px 0 0 #03a9f4 !important;
+}
+
+.input-field label {
+    color: #03a9f4 !important;
+}
+
+.material-icons{
+    color: #FF8A00 !important;   
+}
+nav {
+    background-color: #03a9f4 !important;
+    height: 150px !important; 
+}
+
+.pagination li.active {
+    background-color: #FF8A00 !important;
+}
