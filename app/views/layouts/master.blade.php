@@ -2,32 +2,8 @@
 <html lang="en">
 <head>
     <title>Laravel Blog</title>
-    <style type="text/css">
-        .btn {
-           background-color: #FF8A00 !important; 
-        }
-
-        h1 {
-            font-weight: 200px;
-        }
-        h3 {
-            color: #FF8A00;
-        }
-
-        .input-field input[type=text]:focus {
-            border-bottom: 1px solid #03a9f4 !important;
-            box-shadow: 0 1px 0 0 #03a9f4 !important;
-       }
-
-        .input-field label {
-            color: #03a9f4 !important;
-        }
-            
-        nav {
-            background-color: #03a9f4 !important;
-            height: 150px !important; 
-        }
-    </style>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog_main.css">
     <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
      <!-- Materialize Icons -->
@@ -40,7 +16,7 @@
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li class="active"><a href="{{action('PostsController@index')}}">Posts</a></li>
-                <li class="active"><a href="{{action('PostsController@create')}}">Create a post?</a></li>
+                <li class="active"><a href="{{action('PostsController@create')}}">Create a post</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li class="active"><a href="{{action('PostsController@index')}}"">Posts</a></li>
