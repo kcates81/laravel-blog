@@ -7,7 +7,7 @@
         <h3>{{ $errors->first('body', '<span class="help-block">:message</span>') }}</h3>
     </div>
     <div class="container row">
-        {{ Form::open(array('action' => 'PostsController@store')) }}
+        {{ Form::open(array('action' => 'PostsController@store', 'files' => true)) }}
             <div>
                 {{ Form::label('title', 'Title') }}
                 {{ Form::text('title', Input::old('title'), array('class' => 'form-control other-class another', 'placeholder' => 'Blog Title') ) }} 

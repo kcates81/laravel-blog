@@ -30,7 +30,8 @@
                 <button type="submit" class="btn">Submit Post</button> 
                 <!-- Modal Trigger -->
                 <button data-target="modal1" class="btn modal-trigger">Delete Post</button>
-
+            </div>
+        {{ Form::close() }}   
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <form method="POST" action="{{{action('PostsController@destroy', $post->id)}}}">
@@ -47,8 +48,6 @@
                     </form>
                     
                 </div>    
-            </div>
-        {{ Form::close() }}   
 @stop
 
 @section('bottom-script')

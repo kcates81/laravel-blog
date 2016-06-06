@@ -34,21 +34,25 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
+		$destinationPath = 'uploads';
 		$post = new Post();
 		$post->title = Input::get('title');
 		$post->user_id = User::first()->id;
 		$post->description = Input::get('description');
 		$post->body = Input::get('body');
-		$post->img_url = Input::get('img_url');
-		
+		$post->img_url = Input::file('img_url');
+		// dd($post->img_url);
+
 		// create the validator
 	    $validator = Validator::make(Input::all(), Post::$rules);
 
 	    // attempt validation
 	    if ($validator->fails()) {
+	    	Session::flash('errorMessage', 'Post has failed');
 	        return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
 	        if ($post->save()) {
+	        	Session::flash('successMessage', 'Post has been saved');
 				return Redirect::action('PostsController@show', $post->id)->withInput();
 			}else {
 				return Redirect::back()->withInput();
@@ -103,9 +107,11 @@ class PostsController extends \BaseController {
 
 	    // attempt validation
 	    if ($validator->fails()) {
+	    	Session::flash('errorMessage', 'Post has failed');
 	        return Redirect::back()->withInput()->withErrors($validator);
 	    } else {
 	        if ($post->save()) {
+	        	Session::flash('successMessage', 'Post has been updated');
 				return Redirect::action('PostsController@show', $post->id)->withInput();
 			}else {
 				return Redirect::back()->withInput();
@@ -124,6 +130,8 @@ class PostsController extends \BaseController {
 	{
 		$post = Post::find($id);
 		$post->delete();
+
+		Session::flash('successMessage', 'Post has been deleted');
 		return Redirect::action('PostsController@index', $post->id)->withInput();
 	}
 

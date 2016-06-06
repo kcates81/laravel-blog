@@ -25,6 +25,15 @@
         </div>
     </nav>
 
+    @if (Session::has('successMessage'))
+        <div class="alert alert-success">
+            <p class="flow-text center-align" id="alert">{{{ Session::get('successMessage') }}}</p>
+        </div>
+    @endif
+    @if (Session::has('errorMessage'))
+        <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
+    @endif
+
     @yield('content')
 
     <!-- jQuery -->
