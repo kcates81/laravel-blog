@@ -35,10 +35,10 @@ nav {
     height: 150px !important; 
 }
 
+p {
+  color: #4c575d !important;
+}
 .pagination li.active {
     background-color: #f44e03 !important;
 }
 
-#timestamp {
-    color: #4c575d !important;
-}

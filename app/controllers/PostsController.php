@@ -53,6 +53,7 @@ class PostsController extends \BaseController {
 	    } else {
 	        if ($post->save()) {
 	        	Session::flash('successMessage', 'Post has been saved');
+	        	 Log::info('This is some useful information.');
 				return Redirect::action('PostsController@show', $post->id)->withInput();
 			}else {
 				return Redirect::back()->withInput();
@@ -112,6 +113,7 @@ class PostsController extends \BaseController {
 	    } else {
 	        if ($post->save()) {
 	        	Session::flash('successMessage', 'Post has been updated');
+	        	 Log::info('This is some useful information.');
 				return Redirect::action('PostsController@show', $post->id)->withInput();
 			}else {
 				return Redirect::back()->withInput();
