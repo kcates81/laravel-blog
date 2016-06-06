@@ -1,12 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1 class="center-align">Create a Blog Post</h1>
-    <div id="errors">
-        <h3>{{ $errors->first('title', '<span class="help-block">:message</span>') }}</h3>
-        <h3>{{ $errors->first('body', '<span class="help-block">:message</span>') }}</h3>
-    </div>
+    
     <div class="container row">
+        <h1 class="center-align">Create a Blog Post</h1>
+
+        <div id="errors">
+            <h3>{{ $errors->first('title', '<span class="help-block">:message</span>') }}</h3>
+            <h3>{{ $errors->first('body', '<span class="help-block">:message</span>') }}</h3>
+        </div>
+        
         {{ Form::open(array('action' => 'PostsController@store', 'files' => true)) }}
             <div>
                 {{ Form::label('title', 'Title') }}
