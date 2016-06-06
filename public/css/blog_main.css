@@ -16,6 +16,10 @@ button a {
   color:#fff;
 }
 
+.button-collapse{
+  color: #fff !important;
+}
+
 h1 { 
     font-weight: 300 !important;
     font-family: 'Montserrat';
