@@ -1,3 +1,4 @@
+/*Blog color scheme Blue: #03a9f4 Orange: #f44e03 Light Gray: #E5EDF1 Dark Gray:#4c575d */
 #alert {
    background-color: #f44e03 !important; 
    color: #FFF !important;
@@ -36,4 +37,8 @@ nav {
 
 .pagination li.active {
     background-color: #f44e03 !important;
+}
+
+#timestamp {
+    color: #4c575d !important;
 }
