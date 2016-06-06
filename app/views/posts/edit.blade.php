@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-<h1>Edit Your Post</h1>
+<h1 class="center-align">Edit Your Post</h1>
 
  <div class="container row">
         {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
