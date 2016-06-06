@@ -1,16 +1,26 @@
 /*Blog color scheme Blue: #03a9f4 Orange: #f44e03 Light Gray: #E5EDF1 Dark Gray:#4c575d */
 
+/*H1 header font*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
 #alert {
    background-color: #f44e03 !important; 
    color: #FFF !important;
 }
+
 .btn {
    background-color: #f44e03 !important; 
 }
 
+button a {
+  color:#fff;
+}
+
 h1 { 
     font-weight: 300 !important;
-    text-transform: uppercase;
+    font-family: 'Montserrat';
+    /*color: #4c575d;*/
+    /*text-transform: uppercase;*/
 
 }
 
