@@ -41,7 +41,17 @@
         <div class="alert alert-danger">{{{ Session::get('errorMessage') }}}</div>
     @endif
 
+    
+
     @yield('content')
+
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2016 Kristen L. Cates, PMP
+            </div>
+        </div>
+    </footer>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>

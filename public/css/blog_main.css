@@ -20,6 +20,10 @@ button a {
   color: #fff;
 }
 
+footer.page-footer{
+  background-color: #f44e03;  
+}
+
 h1 { 
   font-weight: 300;
   font-family: 'Montserrat';
@@ -54,6 +58,11 @@ nav {
 p {
   color: #4c575d;
 }
+
+.page-footer{
+  background-color: #f44e03;
+}
+
 .pagination li.active {
   background-color: #f44e03;
 }
