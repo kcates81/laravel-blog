@@ -43,7 +43,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="submit" class="btn">Delete</button>
-                            <button class="btn"><a href="{{{ action('PostsController@show', $post->id) }}}" class=" modal-action modal-close waves-effect waves-green btn-flat">Keep</a></button>
+                            <button class="btn"><a href="{{{ action('PostsController@show', $post->id) }}}" class=" modal-action modal-close">Keep</a></button>
                         </div>
                     </form>
                     
