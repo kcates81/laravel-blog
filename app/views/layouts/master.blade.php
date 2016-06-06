@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <title>Laravel Blog</title>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/blog_main.css">
     <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/blog_main.css">
      <!-- Materialize Icons -->
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Font Awesome Icons -->

@@ -4,12 +4,12 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 #alert {
-   background-color: #f44e03 !important; 
-   color: #FFF !important;
+ background-color: #f44e03; 
+ color: #FFF;
 }
 
 .btn {
-   background-color: #f44e03 !important; 
+ background-color: #f44e03; 
 }
 
 button a {
@@ -17,52 +17,57 @@ button a {
 }
 
 .button-collapse{
-  color: #fff !important;
+  color: #fff;
 }
 
 h1 { 
-    font-weight: 300 !important;
-    font-family: 'Montserrat';
-    /*color: #4c575d;*/
-    /*text-transform: uppercase;*/
-
+  font-weight: 300;
+  font-family: 'Montserrat';
 }
 
 h2{
-  font-weight: 200 !important;
+  font-weight: 200;
 }
 
 h3 {
-    font-weight: 100 !important;
-    color: #f44e03;
+  font-weight: 100;
+  color: #f44e03;
 }
 
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #03a9f4 !important;
-    box-shadow: 0 1px 0 0 #03a9f4 !important;
+  border-bottom: 1px solid #03a9f4;
+  box-shadow: 0 1px 0 0 #03a9f4;
 }
 
 .input-field label {
-    color: #03a9f4 !important;
+  color: #03a9f4;
 }
 
 .material-icons{
-    color: #f44e03 !important;   
+  color: #f44e03;   
 }
 nav {
-    background-color: #03a9f4 !important;
-    height: 150px !important; 
+  background-color: #03a9f4;
+  height: 150px; 
 }
 
 p {
-  color: #4c575d !important;
+  color: #4c575d;
 }
 .pagination li.active {
-    background-color: #f44e03 !important;
+  background-color: #f44e03;
+}
+
+.parallax-container {
+  height: 150px;
+}
+
+.slider .indicators .indicator-item.active {
+  background-color: #f44e03;
 }
 
 #timestamp {
-  color: #E5EDF1 !important;
+  color: #E5EDF1;
   font-style: italic;
 }
 
