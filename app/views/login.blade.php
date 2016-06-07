@@ -4,7 +4,7 @@
     <h1 class="center-align">Login</h1>
     
     <div class="container">
-        {{ Form::open(array('action' => array('PostsController@update'), 'method' => 'POST')) }}
+        {{ Form::open(array('action' => array('HomeController@doLogin'), 'method' => 'POST')) }}
             <div>
                 {{ Form::label('email', 'Email') }}
                 {{ Form::text('email', null,  array('class' => 'form-control other-class another', 'placeholder' => 'Password')) }}
