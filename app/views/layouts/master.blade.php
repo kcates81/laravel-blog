@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Laravel Blog</title>
+    <!-- Page Tab Icon -->
+    <link href="/img/mylogo-owlonly.png">
+    <title>Kristen L. Cates, PMP</title>
     <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <!-- Custom CSS -->
