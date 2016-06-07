@@ -5,6 +5,7 @@
     
     <div class="container">
         {{ Form::open(array('action' => array('HomeController@doLogin'), 'method' => 'POST')) }}
+            {{ Form::token() }}
             <div>
                 {{ Form::label('email', 'Email') }}
                 {{ Form::text('email', null,  array('class' => 'form-control other-class another', 'placeholder' => 'Password')) }}
