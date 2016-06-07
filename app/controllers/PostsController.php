@@ -49,31 +49,36 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		$destinationPath = 'uploads';
-		$post = new Post();
-		$post->title = Input::get('title');
-		$post->user_id = User::first()->id;
-		$post->description = Input::get('description');
-		$post->body = Input::get('body');
-		$post->img_url = Input::file('img_url');
-		// dd($post->img_url);
+		if (Auth::check()) {
+			$destinationPath = 'uploads';
+			$post = new Post();
+			$post->title = Input::get('title');
+			$post->user_id = User::first()->id;
+			$post->description = Input::get('description');
+			$post->body = Input::get('body');
+			$post->img_url = Input::file('img_url');
+			// dd($post->img_url);
 
-		// create the validator
-	    $validator = Validator::make(Input::all(), Post::$rules);
+			// create the validator
+		    $validator = Validator::make(Input::all(), Post::$rules);
 
-	    // attempt validation
-	    if ($validator->fails()) {
-	    	Session::flash('errorMessage', 'Post has failed');
-	        return Redirect::back()->withInput()->withErrors($validator);
-	    } else {
-	        if ($post->save()) {
-	        	Session::flash('successMessage', 'Post has been saved');
-	        	 Log::info('This is some useful information.');
-				return Redirect::action('PostsController@show', $post->id)->withInput();
-			}else {
-				return Redirect::back()->withInput();
-			}
-	    }	
+		    // attempt validation
+		    if ($validator->fails()) {
+		    	Session::flash('errorMessage', 'Post has failed');
+		        return Redirect::back()->withInput()->withErrors($validator);
+		    } else {
+		        if ($post->save()) {
+		        	Session::flash('successMessage', 'Post has been saved');
+		        	 Log::info('This is some useful information.');
+					return Redirect::action('PostsController@show', $post->id)->withInput();
+				}else {
+					return Redirect::back()->withInput();
+				}
+		    }	
+		}else {
+			return $this->showMissing();	
+		}
+		
 	}
 
 
@@ -116,29 +121,34 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$post = Post::find($id);
-		$post->title = Input::get('title');
-		$post->user_id = User::first()->id;
-		$post->description = Input::get('description');
-		$post->body = Input::get('body');
-		$post->img_url = Input::get('img_url');
-		
-		// create the validator
-	    $validator = Validator::make(Input::all(), Post::$rules);
+		if (Auth::check()) {
+			$post = Post::find($id);
+			$post->title = Input::get('title');
+			$post->user_id = User::first()->id;
+			$post->description = Input::get('description');
+			$post->body = Input::get('body');
+			$post->img_url = Input::get('img_url');
+			
+			// create the validator
+		    $validator = Validator::make(Input::all(), Post::$rules);
 
-	    // attempt validation
-	    if ($validator->fails()) {
-	    	Session::flash('errorMessage', 'Post has failed');
-	        return Redirect::back()->withInput()->withErrors($validator);
-	    } else {
-	        if ($post->save()) {
-	        	Session::flash('successMessage', 'Post has been updated');
-	        	 Log::info('This is some useful information.');
-				return Redirect::action('PostsController@show', $post->id)->withInput();
-			}else {
-				return Redirect::back()->withInput();
-			}
-	    }		
+		    // attempt validation
+		    if ($validator->fails()) {
+		    	Session::flash('errorMessage', 'Post has failed');
+		        return Redirect::back()->withInput()->withErrors($validator);
+		    } else {
+		        if ($post->save()) {
+		        	Session::flash('successMessage', 'Post has been updated');
+		        	 Log::info('This is some useful information.');
+					return Redirect::action('PostsController@show', $post->id)->withInput();
+				}else {
+					return Redirect::back()->withInput();
+				}
+	    	}		
+		} else {
+			return $this->showMissing();	
+		}
+		
 	}
 
 
