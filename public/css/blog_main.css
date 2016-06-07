@@ -21,7 +21,8 @@ button a {
 }
 
 footer.page-footer{
-  background-color: #f44e03;  
+  background-color: #f44e03;
+  /*height: 100px;  */
 }
 
 h1 { 
@@ -58,7 +59,7 @@ nav {
 p {
   color: #4c575d;
 }
-
+ 
 .page-footer{
   background-color: #f44e03;
 }
