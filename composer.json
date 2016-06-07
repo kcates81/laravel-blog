@@ -5,9 +5,7 @@
 	"license": "MIT",
 	"type": "project",
 	"require": {
-		"laravel/framework": "4.2.*",
-		"erusev/parsedown": "~1.1",
-    	"ezyang/htmlpurifier": "4.6.*"
+		"laravel/framework": "4.2.*"
 	},
 	"autoload": {
 		"classmap": [
