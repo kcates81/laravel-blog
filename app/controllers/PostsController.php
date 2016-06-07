@@ -7,6 +7,11 @@ class PostsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
+	public function __construct()
+	{
+		
+	}
+	
 	public function index()
 	{
 		$posts = Post::paginate(4);

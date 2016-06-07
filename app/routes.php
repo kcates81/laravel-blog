@@ -19,6 +19,10 @@ Route::get('/portfolio', 'HomeController@showPortfolio');
 
 Route::get('/about', 'HomeController@showAbout');
 
+Route::get('/login', 'HomeController@showLogin');
+
+Route::post('/login', 'HomeController@doLogin');
+
 Route::get('/rolldice/{guess?}', 'HomeController@rollDice');
 
 Route::resource('/posts', 'PostsController');
