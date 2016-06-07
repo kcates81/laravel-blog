@@ -9,9 +9,14 @@ class PostsController extends \BaseController {
 	 */
 	public function __construct()
 	{
-		
+
 	}
-	
+
+	public function showMissing()
+	{
+		return View::make('errors.missing');
+	}
+
 	public function index()
 	{
 		$posts = Post::paginate(4);
@@ -28,7 +33,12 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('posts.create');
+		if (Auth::check()) {
+			return View::make('posts.create');
+		} else {
+			return $this->showMissing();
+		}
+		
 	}
 
 
@@ -88,8 +98,13 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$post = Post::find($id);
-		return View::make('posts.edit')->with('post', $post);
+		if (Auth::check()) {
+			$post = Post::find($id);
+			return View::make('posts.edit')->with('post', $post);
+		} else {
+			return $this->showMissing();
+		}
+		
 	}
 
 
@@ -135,11 +150,16 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$post = Post::find($id);
-		$post->delete();
+		if (Auth::check()) {
+			$post = Post::find($id);
+			$post->delete();
 
-		Session::flash('successMessage', 'Post has been deleted');
-		return Redirect::action('PostsController@index', $post->id)->withInput();
+			Session::flash('successMessage', 'Post has been deleted');
+			return Redirect::action('PostsController@index', $post->id)->withInput();
+		} else {
+			return $this->showMissing();
+		}
+		
 	}
 
 

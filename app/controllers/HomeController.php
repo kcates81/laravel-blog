@@ -69,6 +69,13 @@ class HomeController extends BaseController {
 	{
 		return View::make('login');
 	}
+	public function showLogout()
+	{
+		Auth::logout();
+		return View::make('logout');
+		
+	}
+
 	public function doLogin()
 	{
 		$email = Input::get('email');

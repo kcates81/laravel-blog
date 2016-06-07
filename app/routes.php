@@ -23,6 +23,8 @@ Route::get('/login', 'HomeController@showLogin');
 
 Route::post('/login', 'HomeController@doLogin');
 
+Route::get('/logout', 'HomeController@showLogout');
+
 Route::get('/rolldice/{guess?}', 'HomeController@rollDice');
 
 Route::resource('/posts', 'PostsController');
