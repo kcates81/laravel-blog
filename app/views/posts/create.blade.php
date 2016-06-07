@@ -38,3 +38,9 @@
         {{ Form::close() }}   
     </div>
 @stop
+
+@section('bottom-script')
+     <script>
+        tinymce.init({ selector:'textarea' });
+     </script>
+@stop

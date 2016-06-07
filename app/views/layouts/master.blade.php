@@ -12,6 +12,8 @@
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Font Awesome Icons -->
      <script src="https://use.fontawesome.com/b0b940d6f4.js"></script>
+     <!-- Text Editor CDN -->
+     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script> 
      <!--website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
