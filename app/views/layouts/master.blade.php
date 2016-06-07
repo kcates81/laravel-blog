@@ -23,6 +23,7 @@
                 <li class="active"><a href="{{action('HomeController@showPortfolio')}}">Portfolio</li>
                 <li class="active"><a href="{{action('PostsController@index')}}">Blog</a></li>
                 <li class="active"><a href="{{action('PostsController@create')}}">Create a post</a></li>
+                <li class="active"><a href="{{action('HomeController@showLogin')}}">Login</a></li>
 
             </ul>
             <ul class="side-nav" id="mobile-demo">
@@ -30,6 +31,7 @@
                 <li class="active"><a href="{{action('HomeController@showPortfolio')}}">Portfolio</li>
                 <li class="active"><a href="{{action('PostsController@index')}}"">Blog</a></li>
                 <li class="active"><a href="{{action('PostsController@create')}}"">Create a post</a></li>
+                <li class="active"><a href="{{action('HomeController@showLogin')}}">Login</a></li>
             </ul>
         </div>
     </nav>
