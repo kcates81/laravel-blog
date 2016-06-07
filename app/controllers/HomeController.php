@@ -59,4 +59,9 @@ class HomeController extends BaseController {
 
 	    return View::make('roll-dice')->with($data);
 	}
+
+	public function showAbout()
+	{
+		return View::make('about');
+	}
 }

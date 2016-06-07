@@ -67,7 +67,7 @@
           <div class="footer-copyright">
             <div class="container">
             © 2016 Kristen L. Cates, PMP
-            <a class="grey-text text-lighten-4 right" href="#!">About this Site</a>
+            <a class="grey-text text-lighten-4 right" href="{{ action('HomeController@showAbout')}}">About this Site</a>
             </div>
           </div>
         </footer>
