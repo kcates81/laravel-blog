@@ -1,34 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Login</h1>
-
-    {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+    <h1 class="center-align">Login</h1>
+    
+    <div class="container">
+        {{ Form::open(array('action' => array('PostsController@update'), 'method' => 'POST')) }}
             <div>
-                {{ Form::label('title', 'Title') }}
-                {{ Form::text('title', Input::old('title'), array('class' => 'form-control other-class another', 'placeholder' => 'Blog Title', 'value' => $post->title) ) }} 
-            </div>
-            <div>
-                {{ Form::label('description', 'Tagline') }}
-                {{ Form::text('description', Input::old('description'), array('class' => 'form-control other-class another', 'placeholder' => 'Brief Description', 'value' => $post->description) ) }} 
+                {{ Form::label('email', 'Email') }}
+                {{ Form::text('email', null,  array('class' => 'form-control other-class another', 'placeholder' => 'Password')) }}
             </div>
             <div>
-                {{ Form::label('body', 'Blog Content') }}
-                {{ Form::textarea('body', Input::old('body'), array('class' => 'form-control other-class another materialize-textarea', 'value' => $post->body) ) }}   
-            </div>
-             <div class="file-field input-field">
-                <div class="btn">
-                    <span>Upload Image</span>
-                    <input type="file" name="img_url" value="{{{ Input::old('img_url') }}}">
-                </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Upload an image">
-                </div>
+                {{ Form::label('password', 'Password') }}
+                {{ Form::password('password', array('class' => 'form-control other-class another', 'placeholder' => 'Password') ) }} 
             </div>
             <div>
-                <button type="submit" class="btn">Submit Post</button> 
-                <!-- Modal Trigger -->
-                <button data-target="modal1" class="btn modal-trigger">Delete Post</button>
+                <button type="submit" class="btn">Login</button> 
             </div>
-        {{ Form::close() }}   
+        {{ Form::close() }}       
+    </div>
 @stop 
