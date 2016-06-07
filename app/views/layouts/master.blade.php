@@ -22,7 +22,10 @@
                 <li class="active"><a href="{{action('HomeController@showResume')}}">Resume</li>
                 <li class="active"><a href="{{action('HomeController@showPortfolio')}}">Portfolio</li>
                 <li class="active"><a href="{{action('PostsController@index')}}">Blog</a></li>
+                @if(Auth::check())
                 <li class="active"><a href="{{action('PostsController@create')}}">Create a post</a></li>
+                @endif
+                
                 @if(Auth::check())
                 <li class="active"><a href="{{action('HomeController@showLogout')}}">Logout</a></li>
                 @else
