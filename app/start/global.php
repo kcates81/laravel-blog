@@ -16,6 +16,9 @@ ClassLoader::addDirectories(array(
 	app_path().'/commands',
 	app_path().'/controllers',
 	app_path().'/models',
+    app_path().'/exceptions',
+    app_path().'/services', 
+    app_path().'/validators',
 	app_path().'/database/seeds',
 
 ));
@@ -71,6 +74,16 @@ App::down(function()
 App::missing(function($exception)
 {
     return Response::view('errors.missing', array(), 404);
+});
+
+App::error(function(ValidationException $exception) {
+    Session::flash('errorMessage', $exception->getMessage());
+
+    return Redirect::back()->withInput()->withErrors($exception->validator);
+});
+
+App::error(function(RecordNotSavedException $exception) {
+    return Redirect::back()->withInput();
 });
 
 /*

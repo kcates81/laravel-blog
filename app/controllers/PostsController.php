@@ -9,7 +9,9 @@ class PostsController extends \BaseController {
 	 */
 	public function __construct()
 	{
-
+		$this->beforeFilter(function() {
+			// Auth Check
+		});
 	}
 
 	public function showMissing()
@@ -49,47 +51,24 @@ class PostsController extends \BaseController {
 	 */
 	public function store()
 	{
-		if (Auth::check()) {
-			$post = new Post();
-			$post->title = Input::get('title');
-			$post->user_id = User::first()->id;
-			$post->description = Input::get('description');
-			$post->body = Input::get('body');
+		$post = Post::validateAndCreate(Request::instance(), User::first());
 
-			// create the validator
-		    $validator = Validator::make(Input::all(), Post::$rules);
+		return Redirect::action('PostsController@show', $post->id)->withInput();	
+	}
 
-		    // attempt validation
-		    if ($validator->fails()) {
-		    	Session::flash('errorMessage', 'Post has failed');
-		        return Redirect::back()->withInput()->withErrors($validator);
-		    } else {
-		        if ($post->save()) {
-		        	Session::flash('successMessage', 'Post has been saved');
-		        	Log::info('This is some useful information.');
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		$post = Post::find($id);
 
-		        	if (Input::hasFile('img_url')) {
-					    // get the file out of the request
-					    $img = Input::file('img_url');
-					    // create a new name for the file based on the id of the recently saved post,
-					    // and the original file extension
-					    $imgName = $post->id . '.' . $img->getClientOriginalExtension();
-					    // get the absolute file path to move the file to
-					    $systemPath = public_path() . '/uploads/';
-					    // move the image and rename it
-					    $img->move($systemPath, $imgName);
-					    // set the image path property of the post object and save it to the database
-					    $post->img_url = '/uploads/' . $imgName;
-					    $post->save();
-					}	
-					return Redirect::action('PostsController@show', $post->id)->withInput();
-				}else {
-					return Redirect::back()->withInput();
-				}
-		    }
-		}else {
-			return $this->showMissing();	
-		}	
+		$post = Post::validateAndUpdate($post, Request::instance(), User::first());
+
+		return Redirect::action('PostsController@show', $post->id)->withInput();
 	}
 
 
@@ -119,58 +98,6 @@ class PostsController extends \BaseController {
 			return View::make('posts.edit')->with('post', $post);
 		} else {
 			return $this->showMissing();
-		}
-		
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		if (Auth::check()) {
-			$post = Post::find($id);
-			$post->title = Input::get('title');
-			$post->user_id = User::first()->id;
-			$post->description = Input::get('description');
-			$post->body = Input::get('body');
-			
-			// create the validator
-		    $validator = Validator::make(Input::all(), Post::$rules);
-
-		    // attempt validation
-		    if ($validator->fails()) {
-		    	Session::flash('errorMessage', 'Post has failed');
-		        return Redirect::back()->withInput()->withErrors($validator);
-		    } else {
-		        if ($post->save()) {
-		        	Session::flash('successMessage', 'Post has been updated');
-		        	Log::info('This is some useful information.');
-		        	if (Input::hasFile('img_url')) {
-					    // get the file out of the request
-					    $img = Input::file('img_url');
-					    // create a new name for the file based on the id of the recently saved post,
-					    // and the original file extension
-					    $imgName = $post->id . '.' . $img->getClientOriginalExtension();
-					    // get the absolute file path to move the file to
-					    $systemPath = public_path() . '/uploads/';
-					    // move the image and rename it
-					    $img->move($systemPath, $imgName);
-					    // set the image path property of the post object and save it to the database
-					    $post->img_url = '/uploads/' . $imgName;
-					    $post->save();
-					}
-					return Redirect::action('PostsController@show', $post->id)->withInput();
-				}else {
-					return Redirect::back()->withInput();
-				}
-	    	}		
-		} else {
-			return $this->showMissing();	
 		}
 		
 	}
