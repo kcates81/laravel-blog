@@ -9,7 +9,10 @@
                 <h2><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}}</a></h2>
                 <h3>{{{ $post->description }}}</h3>
                 <p id="timestamp">Posted On: {{{ $post->created_at->setTimezone('America/Chicago')->format('D, M, j, Y @ h:i:s A') }}} | Last Modified On: {{{ $post->updated_at->setTimezone('America/Chicago')->format('D, M, j, Y @ h:i:s A') }}} | Written by: {{{ $post->user->username }}}</p>
-                <p class="flow-text truncate">{{ $post->body }}</p>
+                <div class="text-editor">
+                    <p class="flow-text truncate">{{ $post->body }}</p>   
+                </div>
+                
                 <div class="divider"></div>
             @endforeach  
         </div> 
@@ -23,6 +26,9 @@
 @stop
 
 @section('bottom-script')
-
-
+    <script>
+         $(function() {
+            $('.text-editor p').addClass('flow-text');    
+        });    
+    </script>
 @stop
