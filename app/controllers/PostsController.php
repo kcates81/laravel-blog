@@ -50,7 +50,6 @@ class PostsController extends \BaseController {
 	public function store()
 	{
 		if (Auth::check()) {
-			$destinationPath = 'uploads';
 			$post = new Post();
 			$post->title = Input::get('title');
 			$post->user_id = User::first()->id;
@@ -88,12 +87,9 @@ class PostsController extends \BaseController {
 					return Redirect::back()->withInput();
 				}
 		    }
-
-		   
 		}else {
 			return $this->showMissing();	
-		}
-		
+		}	
 	}
 
 
@@ -142,7 +138,6 @@ class PostsController extends \BaseController {
 			$post->user_id = User::first()->id;
 			$post->description = Input::get('description');
 			$post->body = Input::get('body');
-			$post->img_url = Input::get('img_url');
 			
 			// create the validator
 		    $validator = Validator::make(Input::all(), Post::$rules);
@@ -154,7 +149,21 @@ class PostsController extends \BaseController {
 		    } else {
 		        if ($post->save()) {
 		        	Session::flash('successMessage', 'Post has been updated');
-		        	 Log::info('This is some useful information.');
+		        	Log::info('This is some useful information.');
+		        	if (Input::hasFile('img_url')) {
+					    // get the file out of the request
+					    $img = Input::file('img_url');
+					    // create a new name for the file based on the id of the recently saved post,
+					    // and the original file extension
+					    $imgName = $post->id . '.' . $img->getClientOriginalExtension();
+					    // get the absolute file path to move the file to
+					    $systemPath = public_path() . '/uploads/';
+					    // move the image and rename it
+					    $img->move($systemPath, $imgName);
+					    // set the image path property of the post object and save it to the database
+					    $post->img_url = '/uploads/' . $imgName;
+					    $post->save();
+					}
 					return Redirect::action('PostsController@show', $post->id)->withInput();
 				}else {
 					return Redirect::back()->withInput();

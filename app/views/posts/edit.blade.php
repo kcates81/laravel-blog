@@ -4,7 +4,7 @@
 <h1 class="center-align">Edit Your Post</h1>
 
  <div class="container row">
-        {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT')) }}
+        {{ Form::model($post, array('action' => array('PostsController@update', $post->id), 'method' => 'PUT', 'files' => true)) }}
             <div>
                 {{ Form::label('title', 'Title') }}
                 {{ Form::text('title', Input::old('title'), array('class' => 'form-control other-class another', 'placeholder' => 'Blog Title', 'value' => $post->title) ) }} 
@@ -20,7 +20,7 @@
              <div class="file-field input-field">
                 <div class="btn">
                     <span>Upload Image</span>
-                    <input type="file" name="img_url" value="{{{ Input::old('img_url') }}}">
+                     <input type="file" name="img_url" value="{{{ $post->img_url }}}">
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" type="text" placeholder="Upload an image">
