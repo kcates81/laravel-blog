@@ -10,9 +10,8 @@
             <p class="flow-text">{{ $post->body }}</p>     
         </div>
         
-        
         @if(Auth::check())
-        <button class="btn"><a href="{{{ action('PostsController@edit', $post->id) }}}">Edit Your Post</a></button>
+            <button class="btn"><a href="{{{ action('PostsController@edit', $post->id) }}}">Edit Your Post</a></button>
         @endif
     </div> 
 
