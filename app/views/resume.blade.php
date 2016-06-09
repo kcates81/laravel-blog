@@ -4,7 +4,7 @@
     <h1 class="center-align">My Resume Highlights</h1>
     <ul class="collapsible" data-collapsible="accordion">
         <li>
-            <div class="collapsible-header flow-text"><i class="material-icons">assignment</i>Summary Statement</div>
+            <div class="collapsible-header active flow-text"><i class="material-icons">assignment</i>Summary Statement</div>
             <div class="collapsible-body">
                 <p class="flow-text">Entry-level LAMP+J Developer transitioning from a 10+ year career in proposal/project management and business development. Particularly interested in using back-end languages to solve problems for businesses and end-users. Currently adding functionality to personal website using Laravel and watching Laracasts to deepen understanding of PHP and the Laravel framework.</p>
             </div>
