@@ -85,11 +85,6 @@ p {
 }
 
 #timestamp {
-  color: #E5EDF1;
-  font-style: italic;
-}
-
-#timestamp:hover {
   color: #4c575d;
-  font-style: bold;
+  font-style: italic;
 }
