@@ -72,14 +72,14 @@
             <div class="row">
               <div class="col l6 s12">
                 <h5 class="white-text">Contact Me</h5>
-                <p class="grey-text text-lighten-4"><i class="fa fa-map-marker" aria-hidden="true"></i>11935 Travis Path<br>San Antonio, TX 78253<br><i class="fa fa-mobile" aria-hidden="true"></i>210.278.8717<br><a class="grey-text text-lighten-3" href="mailto:kriscates81@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>kriscates81@gmail.com</a></p>
+                <p class="grey-text text-lighten-4"><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;11935 Travis Path<br>San Antonio, TX 78253<br><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;210.278.8717<br><a class="grey-text text-lighten-3" href="mailto:kriscates81@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;kriscates81@gmail.com</a></p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Online Presence</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="https://github.com/kcates81" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>kcates81</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/kriscates81" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@kriscates81</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kristenladonacates" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>kristenladonacates</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/kcates81" target="_blank"><i class="fa fa-github" aria-hidden="true"></i>&nbsp;kcates81</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://twitter.com/kriscates81" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;@kriscates81</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/kristenladonacates" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i>&nbsp;kristenladonacates</a></li>
                 </ul>
               </div>
             </div>
