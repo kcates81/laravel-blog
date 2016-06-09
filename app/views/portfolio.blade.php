@@ -14,7 +14,7 @@
             <li>
                 <a href="https://github.com/kcates81/Codeup-Web-Exercises/blob/master/public/national_parks.php" target="_blank"><img class="responsive-img" src="/img/screenshots/national-parks.png"></a>
                 <div class="caption right-align">
-                    <h3><strong>National Parks Project Project</strong></h3>
+                    <h3><strong>National Parks Project</strong></h3>
                     <h5>Built using PHP, MySQL, HTML, Google's Materialize, and Custom CSS</h5>
                 </div>
             </li>
