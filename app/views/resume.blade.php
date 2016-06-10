@@ -77,7 +77,9 @@
             </div>
         </li>
     </ul>
-        
+    <div>
+        <button class="btn"><a href="/documents/kcates_webdev_resume.pdf" target="_blank">Download Hardcopy Resume</a></button>
+    </div>   
 @stop
 
 @section('bottom-script')
