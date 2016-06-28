@@ -20,8 +20,9 @@
                             <li class="flow-text">JavaScript</li>
                             <li class="flow-text">jQuery</li>
                             <li class="flow-text">Twitter Bootstrap CSS</li>
-                            <li class="flow-text">Google Materialize CSS</li>
+                            <li class="flow-text">Materialize CSS</li>
                             <li class="flow-text">Google Maps API</li>
+                            <li class='flow-text'>Mailgun API</li>
                             <li class="flow-text">Open Weather Maps API</li>
                             <li class="flow-text">Tiny MCE Text Editor</li>
                         </ul>
@@ -47,13 +48,14 @@
         <li>
             <div class="collapsible-header flow-text"><i class="material-icons">code</i>Projects</div>
             <div class="collapsible-body">
+                <p class="flow-text"><a href="https://github.com/Freelancer-Invoice-Tool/flit.dev"><strong>FLIT</strong></a><br>My team and I have developed an application that allows freelancers to track their projects and outstanding invoices using the Laravel framework. This application allows users to create an account, projects, and clients and track project and invoice deadlines. Users can view their information in a high-level dashboard view or in detailed page views. The hallmarks of this project are simplistic design, intuitive information architecture, and modular, easily-maintainable code.</p>
                 <p class="flow-text"><a href="https://github.com/kcates81/laravel-blog" target="_blank"><strong>Blog Project</strong></a> <br>Developed and deployed a personal website and blog from scratch using the Laravel 4.2 framework.</p> 
 
                 <p class="flow-text"><a href="https://github.com/greasy-blanket/adlister.dev" target="_blank"><strong>Adlister Project</strong></a><br>Worked with two other classmates to develop a Craigslist clone using PHP and MySQL (SequelPro). Used Trello as a project management tool to develop all tasks and related activities, assign responsibilities and due dates, and communicate project status. Also, first experience forking, branching, pulling, and merging code as part of a team in GitHub.</p>
                 
-                <p class="flow-text"><a href="https://github.com/kcates81/Codeup-Web-Exercises/blob/master/public/national_parks.php" target="_blank"><strong>National Parks Project</strong></a><br>Used PHP, MySQL, Google Materialize CSS, custom CSS, and HTML to create a listing of National Parks complete with pagination and form that allows users to add parks to the list and display them within the application.</p>
+                <p class="flow-text"><a href="https://github.com/kcates81/Codeup-Web-Exercises/blob/master/public/national_parks.php" target="_blank"><strong>National Parks Project</strong></a><br>Used PHP, MySQL, Materialize CSS, custom CSS, and HTML to create a listing of National Parks complete with pagination and form that allows users to add parks to the list and display them within the application.</p>
 
-                <p class="flow-text"><a href="https://github.com/kcates81/Codeup-Web-Exercises/blob/master/public/weather_map.js" target="_blank"><strong>Weather Map Project</strong></a><br>Used JavaScript, HTML, CSS, Google Materialize CSS, Google Maps API, and Open Weather Map API to develop an application that displays the 5-day weather forecast based on location. Users can enter the longitude and latitude of the forecast location or they can drag and drop the location marker within the map to change the forecast location. </p>
+                <p class="flow-text"><a href="https://github.com/kcates81/Codeup-Web-Exercises/blob/master/public/weather_map.js" target="_blank"><strong>Weather Map Project</strong></a><br>Used JavaScript, HTML, CSS, Materialize CSS, Google Maps API, and Open Weather Map API to develop an application that displays the 5-day weather forecast based on location. Users can enter the longitude and latitude of the forecast location or they can drag and drop the location marker within the map to change the forecast location. </p>
             </div>
         </li>
         <li>
