@@ -83,6 +83,9 @@ p {
   height: 150px;
 }
 
+#post-box{
+  /*display: inline-block;*/
+}
 .slider .indicators .indicator-item.active {
   background-color: #f44e03;
 }
@@ -90,4 +93,8 @@ p {
 #timestamp {
   color: #4c575d;
   font-style: italic;
+}
+
+#twitter-box{
+  /*display: inline-block;*/
 }
